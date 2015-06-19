@@ -15,8 +15,9 @@ public class App {
     public static void main( String[] args ) throws  Exception {
         Word2Vec vec = WordVectorSerializer.loadGoogleModel(new File(args[0]),Boolean.parseBoolean(args[1]));
         List<String> words = StringUtils.split(args[2],",");
+
         for(String s : words) {
-            System.out.println(vec.wordsNearest(s,20));
+            System.out.println(vec.getWordVector(s));
         }
     }
 }

@@ -17,7 +17,7 @@ public class App {
         List<String> words = StringUtils.split(args[2],",");
 
         for(String s : words) {
-            System.out.println(vec.getWordVector(s));
+            System.out.println(vec.getWordVectorMatrix(s));
         }
     }
 }

@@ -6,6 +6,7 @@ import org.deeplearning4j.models.word2vec.Word2Vec;
 
 
 import java.io.File;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -17,6 +18,7 @@ public class App {
         Word2Vec vec = WordVectorSerializer.loadGoogleModel(new File(args[0]),Boolean.parseBoolean(args[1]));
         List<String> words = StringUtils.split(args[2],",");
         for(String s : words) {
+            System.out.println("Vector for word " + Arrays.toString(vec.getWordVector(s)));
             System.out.println("Words nearest " + vec.wordsNearest(s,20));
 
         }

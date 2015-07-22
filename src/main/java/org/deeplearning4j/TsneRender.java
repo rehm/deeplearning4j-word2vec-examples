@@ -20,7 +20,7 @@ public class TsneRender {
                 .theta(0.5).learningRate(500).setMaxIter(1000)
                 .build();
         log.info("Loading word vectors");
-        Word2Vec vec = WordVectorSerializer.loadGoogleModel(new File(args[0]), true);
+        Word2Vec vec = WordVectorSerializer.loadGoogleModel(new File(args[0]), true,true);
         log.info("Loaded word vectors");
         InMemoryLookupTable table = (InMemoryLookupTable) vec.lookupTable();
         tsne.plot(table.getSyn0(),2,new ArrayList<>(vec.vocab().words()));

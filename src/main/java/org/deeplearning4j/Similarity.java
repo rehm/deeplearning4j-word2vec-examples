@@ -14,15 +14,10 @@ import java.util.List;
  * Hello world!
  *
  */
-public class App {
+public class Similarity {
     public static void main( String[] args ) throws  Exception {
         Nd4j.factory().setOrder('f');
         WordVectors vec = WordVectorSerializer.loadGoogleModel(new File(args[0]),Boolean.parseBoolean(args[1]));
-        List<String> words = StringUtils.split(args[2],",");
-        for(String s : words) {
-            System.out.println("Vector for word " + Arrays.toString(vec.getWordVector(s)));
-            System.out.println("Words nearest " + vec.wordsNearest(s,20));
-
-        }
+        System.out.println( vec.similarity("ping-pong", "tennis"));
     }
 }

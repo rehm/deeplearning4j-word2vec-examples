@@ -10,11 +10,11 @@
   <name>deeplearning4j-word2vec-test</name>
   <url>http://maven.apache.org</url>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <dl4j.version>0.0.3.3.5.alpha2-SNAPSHOT</dl4j.version>
-      <nd4j.version>0.0.3.5.5.6-SNAPSHOT</nd4j.version>
-  </properties>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <nd4j.version>0.4-rc3.9-SNAPSHOT</nd4j.version>
+        <dl4j.version>0.4-rc3.9-SNAPSHOT</dl4j.version>
+    </properties>
     <build>
         <plugins>
             <plugin>
@@ -68,9 +68,11 @@
   <dependencies>
       <dependency>
           <groupId>org.nd4j</groupId>
-          <artifactId>nd4j-jblas</artifactId>
-          <version>0.0.3.5.5.6-SNAPSHOT</version>
+          <artifactId>nd4j-native</artifactId>
+          <classifier></classifier>
+          <version>${nd4j.version}</version>
       </dependency>
+
     <dependency>
       <groupId>org.deeplearning4j</groupId>
       <artifactId>deeplearning4j-nlp</artifactId>
@@ -80,6 +82,12 @@
       <dependency>
           <groupId>org.deeplearning4j</groupId>
           <artifactId>deeplearning4j-ui</artifactId>
+          <version>${dl4j.version}</version>
+      </dependency>
+
+      <dependency>
+          <groupId>org.deeplearning4j</groupId>
+          <artifactId>deeplearning4j-core</artifactId>
           <version>${dl4j.version}</version>
       </dependency>
   </dependencies>
